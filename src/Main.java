@@ -28,13 +28,13 @@ public class Main {
                 for (int p = 0; p < x; p++) {
                     for (int p1 = p + 1; p1 < x; p1++) {
                         double peremen = 0; //вспомогательная переменная для перезаписи элементов массива
-                        if ((m[p] - (int) m[p]) < (m[p1] - (int) m[p1])) { //сравнение дробных частей чисел
+                        if ((Math.abs(m[p]) - (int)Math.abs(m[p])) < (Math.abs(m[p1]) - (int) Math.abs(m[p1]))) { //сравнение дробных частей чисел
                             peremen = m[p];
                             m[p] = m[p1];
                             m[p1] = peremen;
                         }
                         else {
-                            if ((m[p] - (int) m[p]) == (m[p1] - (int) m[p1])) {//если дробные части равны...
+                            if ((Math.abs(m[p]) - (int)Math.abs(m[p])) == (Math.abs(m[p1]) - (int) Math.abs(m[p1]))) {//если дробные части равны...
                                 if (((int) m[p]) > ((int) m[p1])) { //сортируем по целой части
                                     peremen = m[p];
                                     m[p] = m[p1];
@@ -54,9 +54,13 @@ public class Main {
         out.println("Среднее геом.:");
         for (int i = 0; i<z; i++) {
             double product = 1;
+            int c = 0;
             for (int j = 0; j < x; j++) {
                 for (int k = 0; k < y; k++) {
-                    product *= a[i][j][k]; //находим произведение всех элементов слоя
+                    if (a[i][j][k] > 0) {
+                        product *= a[i][j][k]; //находим произведение положительных элементов слоя
+                        c++;
+                    }
                 }
             }
             out.printf("%.4f", (Math.pow(product, ((double)1/(x*y))))); //выводим сред. геом.
