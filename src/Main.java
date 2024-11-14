@@ -28,13 +28,13 @@ public class Main {
                 for (int p = 0; p < x; p++) {
                     for (int p1 = p + 1; p1 < x; p1++) {
                         double peremen = 0; //вспомогательная переменная для перезаписи элементов массива
-                        if ((Math.abs(m[p]) - (int)Math.abs(m[p])) < (Math.abs(m[p1]) - (int) Math.abs(m[p1]))) { //сравнение дробных частей чисел
+                        if (((m[p]) - (int)(m[p])) < ((m[p1]) - (int)(m[p1]))) { //сравнение дробных частей чисел
                             peremen = m[p];
                             m[p] = m[p1];
                             m[p1] = peremen;
                         }
                         else {
-                            if ((Math.abs(m[p]) - (int)Math.abs(m[p])) == (Math.abs(m[p1]) - (int) Math.abs(m[p1]))) {//если дробные части равны...
+                            if (((m[p]) - (int)(m[p])) == ((m[p1]) - (int)(m[p1]))) {//если дробные части равны...
                                 if (((int) m[p]) > ((int) m[p1])) { //сортируем по целой части
                                     peremen = m[p];
                                     m[p] = m[p1];
