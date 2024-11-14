@@ -63,7 +63,7 @@ public class Main {
                     }
                 }
             }
-            out.printf("%.4f", (Math.pow(product, ((double)1/(x*y))))); //выводим сред. геом.
+            out.printf("%.4f", (Math.pow(product, ((double)1/с)))); //выводим сред. геом.
             out.println();
         }
 
